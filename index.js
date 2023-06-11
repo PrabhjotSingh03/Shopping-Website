@@ -30,12 +30,14 @@ app.use(express.json());
  */
 app.get("/", async (request, response) => {
   let links = await getAllLinks();
-  response.render("index", { title: "Home", menu: links });
+  let lovedbrands = await getAllLovedBrands();
+  response.render("index", { title: "Home", menu: links, lovedbrands : lovedbrands });
 });
 
 app.get("/men", async (request, response) => {
   let links = await getAllLinks();
-  response.render("men", { title: "Men", menu: links });
+  let lovedbrands = await getAllLovedBrands();
+  response.render("men", { title: "Men", menu: links, lovedbrands : lovedbrands  });
 });
 
 app.get("/women", async (request, response) => {
@@ -73,6 +75,48 @@ app.get("/bag", async (request, response) => {
   response.render("bag", { title: "Bag", menu: links });
 });
 
+app.get("/levis", async (request, response) => {
+  let links = await getAllLinks();
+  let lovedbrands = await getAllLovedBrands();
+  response.render("levis", { title: "Levi's",  menu: links, lovedbrands : lovedbrands });
+});
+
+app.get("/nike", async (request, response) => {
+  let links = await getAllLinks();
+  let lovedbrands = await getAllLovedBrands();
+  response.render("nike", { title: "Nike",  menu: links, lovedbrands : lovedbrands });
+});
+
+app.get("/chanel", async (request, response) => {
+  let links = await getAllLinks();
+  let lovedbrands = await getAllLovedBrands();
+  response.render("chanel", { title: "Chanel",  menu: links, lovedbrands : lovedbrands });
+});
+
+app.get("/hnm", async (request, response) => {
+  let links = await getAllLinks();
+  let lovedbrands = await getAllLovedBrands();
+  response.render("hnm", { title: "H&M",  menu: links, lovedbrands : lovedbrands });
+});
+
+app.get("/lululemon", async (request, response) => {
+  let links = await getAllLinks();
+  let lovedbrands = await getAllLovedBrands();
+  response.render("lululemon", { title: "Lululemon",  menu: links, lovedbrands : lovedbrands });
+});
+
+app.get("/rolex", async (request, response) => {
+  let links = await getAllLinks();
+  let lovedbrands = await getAllLovedBrands();
+  response.render("rolex", { title: "Rolex",  menu: links, lovedbrands : lovedbrands });
+});
+
+app.get("/dior", async (request, response) => {
+  let links = await getAllLinks();
+  let lovedbrands = await getAllLovedBrands();
+  response.render("dior", { title: "Dior",  menu: links, lovedbrands : lovedbrands });
+});
+
 /**
  * Server Activation
  */
@@ -95,18 +139,9 @@ app.listen(port, async () => {
       return res;
     }
 
-    async function getSingleLink(id) {
+    async function getAllLovedBrands() {
       db = await connection();
-      const editId = { _id: new ObjectId(id) };
-      const result = await db.collection("menuLinks").findOne(editId);
-      return result;
+      let lovedBrands = db.collection("lovedBrands").find({});
+      resbrands = await lovedBrands.toArray();
+      return resbrands;
     }
-
-    async function getLinks() {
-      db = await connection();
-      let results = db.collection("menuLinks").find({}); // find({}) is select all
-      res = await results.toArray();
-      return res;
-    }
-
-

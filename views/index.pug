@@ -4,50 +4,15 @@ block layout-content
   div.View
     main
       section.mainimg 
-        img(src='mainimg.jpg')
+        img(src='/images/mainimg.jpg')
         //https://unsplash.com/photos/2TLREZi7BUg
       section.lovedBrands 
         h2 Most-Loved Brands 
         .loveBrands
-          .brand
-            a(href='#')
-              img(src='levi.jpg', alt='Product 1')
-              //https://unsplash.com/photos/HmgSNpswOxM
-              h3 Levi's
-              p UP TO 50% OFF
-          .brand
-            a(href='#')
-              img(src='Nike.jpg', alt='Product 1')
-              //https://unsplash.com/photos/SD9Jyl1xNQ4
-              h3 Nike
-              p MIN. 40% OFF
-          .brand
-            a(href='#')
-              img(src='Chanel.jpg', alt='Product 1')
-              //https://unsplash.com/photos/fIfpKhaM-WA
-              h3 Chanel
-              p FLAT 60% OFF
-          .brand
-            a(href='#')
-              img(src='HnM.jpg', alt='Product 1')
-              //https://unsplash.com/photos/xXJ6utyoSw0
-              h3 H&M
-              p MIN. 30% OFF
-          .brand
-            a(href='#')
-              img(src='Lululemon.jpg', alt='Product 1')
-              //https://unsplash.com/photos/2I0e38YkR1A
-              h3 Lululemon
-              p UP TO 40% OFF
-          .brand
-            a(href='#')
-              img(src='Rolex.jpg', alt='Product 1')
-              //https://unsplash.com/photos/LWPPpkn6NEQ
-              h3 Rolex
-              p FLAT 10% OFF
-          .brand
-            a(href='#')
-              img(src='Dior.jpg', alt='Product 1')
-              //https://www.pexels.com/photo/photo-of-eyeshadow-palette-4702570/
-              h3 Dior
-              p MIN. 30% OFF
+          each lb in lovedbrands 
+            .brand
+              a(href=lb.path)
+                img(src=lb.imgsrc, alt=lb.imgalt)
+                //https://unsplash.com/photos/HmgSNpswOxM
+                h3 #{lb.name}
+                p #{lb.discount}
