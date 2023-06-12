@@ -7,12 +7,13 @@ block layout-content
         h2 #{jacket.name}
         .loveBrands
             each image in jacket.imgsrc
-                .jacketdiv
-                    img.jacket(src=image, alt=jacket.imgalt)
+                .jacket
+                    img(src=image, alt=jacket.imgalt)
                     //https://unsplash.com/photos/HmgSNpswOxM
-        h3 #{jacket.name}
-        p #{jacket.price}
-        p #{jacket.type}
-        p #{jacket.color}
-        p #{jacket.description}
-        p #{jacket.size}
+        .details
+            h3 #{jacket.name}
+            p #{jacket.price}
+            p #{jacket.type}
+            p #{jacket.color}
+            p #{jacket.description}
+            p #{jacket.size}

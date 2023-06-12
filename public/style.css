@@ -160,12 +160,12 @@ main{
     transition: ease-in-out .4s;
     transform: scale(1.1);
 }
-.brand img{
+.brand img, .levis img{
     width: 100%;
     height: auto;
     border: 1px solid #333;
 }
-.brand h3{
+.brand h3, .levis h3{
     position: relative;
     top: -53px;
     text-align: center;
@@ -178,7 +178,7 @@ main{
     backdrop-filter: blur( 1px );
     -webkit-backdrop-filter: blur( 1px );
 }
-.brand p{
+.brand p, .levis p{
     position: relative;
     top: -51px;
     text-align: center;
@@ -191,12 +191,32 @@ main{
     backdrop-filter: blur( 1px );
     -webkit-backdrop-filter: blur( 1px );
 }
-.jacketdiv{
+.levis{
+    flex: 1 0 12%;
+    padding: 30px;
+}
+.levis:hover{
+    transition: ease-in-out .4s;
+    transform: scale(1.1);
+}
+
+.jacket{
     flex: 1 0 20%;
     padding: 10px;
+    border: 1px solid #333;
+    margin: 12px;
 }
-.jacket{
+.jacket img{
     width: 100%;
     height: auto;
-    border: 1px solid #333;
+}
+.jacket img:hover{
+    transition: ease-in-out .4s;
+    transform: scale(1.1);
+}
+.details{
+    margin: 3%;
+}
+.details p{
+    line-height: 23px;
 }
