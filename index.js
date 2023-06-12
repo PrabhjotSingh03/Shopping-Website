@@ -77,10 +77,10 @@ app.get("/bag", async (request, response) => {
 
 app.get("/levis", async (request, response) => {
   let links = await getAllLinks();
-  let lovedbrands = await getAllLovedBrands();
-  response.render("levis", { title: "Levi's",  menu: links, lovedbrands : lovedbrands });
+  let levis = await getAllLevis();
+  response.render("levis", { title: "Levi's",  menu: links, levis : levis });
 });
-
+9
 app.get("/nike", async (request, response) => {
   let links = await getAllLinks();
   let lovedbrands = await getAllLovedBrands();
@@ -117,6 +117,12 @@ app.get("/dior", async (request, response) => {
   response.render("dior", { title: "Dior",  menu: links, lovedbrands : lovedbrands });
 });
 
+app.get("/levisjacket", async (request, response) => {
+  let links = await getAllLinks();
+  let levis = await getAllLevis();
+  response.render("levisjacket", { title: "Levis Jacket",  menu: links, levis : levis   });
+});
+
 /**
  * Server Activation
  */
@@ -144,4 +150,11 @@ app.listen(port, async () => {
       let lovedBrands = db.collection("lovedBrands").find({});
       resbrands = await lovedBrands.toArray();
       return resbrands;
+    }
+
+    async function getAllLevis() {
+      db = await connection();
+      let levis = db.collection("levis").find({});
+      reslevis = await levis.toArray();
+      return reslevis;
     }
