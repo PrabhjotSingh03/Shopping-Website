@@ -9,7 +9,7 @@ block layout-content
           each levisCloths in levis
             .brand
               a(href=levisCloths.path)
-                img(src=levisCloths.imgsrc, alt=levisCloths.imgalt)
+                img(src=levisCloths.imgsrc[0], alt=levisCloths.imgalt)
                 //https://unsplash.com/photos/HmgSNpswOxM
                 h3 #{levisCloths.name}
                 p #{levisCloths.price}

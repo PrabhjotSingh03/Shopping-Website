@@ -1,5 +1,18 @@
 extends layout
 
 block layout-content
-    div.View
-        main
+  div.View
+    main
+      section.lovedBrands 
+        h2 #{jacket.name}
+        .loveBrands
+            each image in jacket.imgsrc
+                .jacketdiv
+                    img.jacket(src=image, alt=jacket.imgalt)
+                    //https://unsplash.com/photos/HmgSNpswOxM
+        h3 #{jacket.name}
+        p #{jacket.price}
+        p #{jacket.type}
+        p #{jacket.color}
+        p #{jacket.description}
+        p #{jacket.size}

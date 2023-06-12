@@ -120,7 +120,8 @@ app.get("/dior", async (request, response) => {
 app.get("/levisjacket", async (request, response) => {
   let links = await getAllLinks();
   let levis = await getAllLevis();
-  response.render("levisjacket", { title: "Levis Jacket",  menu: links, levis : levis   });
+  let denim = await getOneLevisjacket();
+  response.render("levisjacket", { title: "Levis Jacket",  menu: links, levis : levis, jacket : denim });
 });
 
 /**
@@ -157,4 +158,10 @@ app.listen(port, async () => {
       let levis = db.collection("levis").find({});
       reslevis = await levis.toArray();
       return reslevis;
+    }
+
+    async function getOneLevisjacket() {
+      db = await connection();
+      let jack = db.collection("levis").findOne({ type: "Denim Jacket"});
+      return jack;
     }
