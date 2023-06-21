@@ -42,22 +42,26 @@ app.get("/men", async (request, response) => {
 
 app.get("/women", async (request, response) => {
   let links = await getAllLinks();
-  response.render("women", { title: "Women", menu: links });
+  let lovedbrands = await getAllLovedBrands();
+  response.render("women", { title: "Women", menu: links, lovedbrands : lovedbrands  });
 });
 
 app.get("/kids", async (request, response) => {
   let links = await getAllLinks();
-  response.render("kids", { title: "Kids", menu: links });
+  let lovedbrands = await getAllLovedBrands();
+  response.render("kids", { title: "Kids", menu: links, lovedbrands : lovedbrands });
 });
 
 app.get("/homeliving", async (request, response) => {
   let links = await getAllLinks();
-  response.render("homeliving", { title: "Home & Living", menu: links });
+  let lovedbrands = await getAllLovedBrands();
+  response.render("homeliving", { title: "Home & Living", menu: links, lovedbrands : lovedbrands });
 });
 
 app.get("/beauty", async (request, response) => {
   let links = await getAllLinks();
-  response.render("beauty", { title: "Beauty", menu: links });
+  let lovedbrands = await getAllLovedBrands();
+  response.render("beauty", { title: "Beauty", menu: links, lovedbrands : lovedbrands });
 });
 
 app.get("/profile", async (request, response) => {
