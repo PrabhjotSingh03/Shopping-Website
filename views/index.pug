@@ -22,3 +22,35 @@ block layout-content
                 //https://www.pexels.com/photo/photo-of-eyeshadow-palette-4702570/
                 h3 #{lb.name}
                 p #{lb.discount}
+      section.lovedBrands 
+        h2 Premium Brands
+        .loveBrands
+          each lb in lovedbrands 
+            .brand
+              a(href=lb.path)
+                img(src=lb.imgsrc, alt=lb.imgalt)
+                //https://unsplash.com/photos/HmgSNpswOxM
+                //https://unsplash.com/photos/SxAXphIPWeg
+                //https://unsplash.com/photos/fIfpKhaM-WA
+                //https://unsplash.com/photos/xXJ6utyoSw0
+                //https://unsplash.com/photos/2I0e38YkR1A
+                //https://unsplash.com/photos/LWPPpkn6NEQ
+                //https://www.pexels.com/photo/photo-of-eyeshadow-palette-4702570/
+                h3 #{lb.name}
+                p #{lb.discount} 
+      section.lovedBrands 
+        h2 Special Discounts
+        .loveBrands
+          each lb in lovedbrands 
+            .brand
+              a(href=lb.path)
+                img(src=lb.imgsrc, alt=lb.imgalt)
+                //https://unsplash.com/photos/HmgSNpswOxM
+                //https://unsplash.com/photos/SxAXphIPWeg
+                //https://unsplash.com/photos/fIfpKhaM-WA
+                //https://unsplash.com/photos/xXJ6utyoSw0
+                //https://unsplash.com/photos/2I0e38YkR1A
+                //https://unsplash.com/photos/LWPPpkn6NEQ
+                //https://www.pexels.com/photo/photo-of-eyeshadow-palette-4702570/
+                h3 #{lb.name}
+                p #{lb.discount}            
